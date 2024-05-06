@@ -22,7 +22,6 @@ function StartGameScreen() {
       ]);
       return;
     }
-    console.log("Valid Number.");
   }
 
   return (
@@ -38,7 +37,7 @@ function StartGameScreen() {
       ></TextInput>
       <View style={styles.buttonsContainer}>
         <View style={styles.buttonContainer}>
-          <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+          <PrimaryButton onPress:resetInputHandler>Reset</PrimaryButton>
         </View>
         <View style={styles.buttonContainer}>
           <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>

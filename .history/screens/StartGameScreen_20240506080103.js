@@ -22,7 +22,6 @@ function StartGameScreen() {
       ]);
       return;
     }
-    console.log("Valid Number.");
   }
 
   return (
