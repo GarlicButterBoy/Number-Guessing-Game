@@ -24,7 +24,7 @@ export default function App() {
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
       >
-        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+        {screen}
       </ImageBackground>
     </LinearGradient>
   );
