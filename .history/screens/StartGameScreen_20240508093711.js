@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     borderBottomColor: Colors.accent500,
     borderBottomWidth: 2,
-    color: Colors.accent500,
+    color: "#ddb52f",
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
