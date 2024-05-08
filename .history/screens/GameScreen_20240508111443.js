@@ -53,7 +53,7 @@ function GameScreen({ userNumber }) {
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
-      <NumberBox>{currentGuess}</NumberBox>
+      {/* <NumberBox>{currentGuess}</NumberBox> */}
       <View>
         <Text>Higher or Lower?</Text>
         <View>

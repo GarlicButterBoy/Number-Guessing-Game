@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Alert } from "react-native";
 import Title from "../components/game/Title";
 import Colors from "../constants/colors";
 import { useState } from "react";
-import NumberBox from "../components/game/NumberBox";
+import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/game/PrimaryButton";
 
 function generateRandomBetween(min, max, exclude) {
@@ -32,15 +32,17 @@ function GameScreen({ userNumber }) {
       (direction === "lower" && currentGuess < userNumber) ||
       (direction === "greater" && currentGuess > userNumber)
     ) {
-      Alert.alert("Don't lie!", "You know this is wrong...", [
+      Alert.alert("Dont't lie!", "You know this is wrong...", [
         { text: "Sorry.", style: "cancel" },
       ]);
       return;
     }
     if (direction === "lower") {
+      //lower
       maxBoundary = currentGuess;
     } else {
-      minBoundary = currentGuess + 1;
+      //greater
+      minBoundary = currentGuess;
     }
     const newRndNumber = generateRandomBetween(
       minBoundary,
@@ -53,7 +55,7 @@ function GameScreen({ userNumber }) {
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
-      <NumberBox>{currentGuess}</NumberBox>
+      <NumberContainer>{currentGuess}</NumberContainer>
       <View>
         <Text>Higher or Lower?</Text>
         <View>
