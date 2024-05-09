@@ -14,24 +14,19 @@ export default function App() {
 
   function pickedNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
-    setGameIsOver(false);
-  }
-
-  function gameOverHandler() {
-    setGameIsOver(true);
   }
 
   let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 
   if (userNumber) {
-    screen = (
-      <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />
-    );
+    screen = <GameScreen userNumber={userNumber} />;
   }
 
-  if (gameIsOver && userNumber) {
+  if (gameIsOver) {
     screen = <GameOverScreen />;
   }
+
+  functio 
 
   return (
     <LinearGradient
