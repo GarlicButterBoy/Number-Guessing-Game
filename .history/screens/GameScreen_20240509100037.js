@@ -66,7 +66,7 @@ function GameScreen({ userNumber, onGameOver }) {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              <Ionicons name="remove" size={24} color="white" />
+              <Ionicons name="minus" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>

@@ -1,6 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Alert } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Text, View, StyleSheet, Alert } from "react-native";
 import Title from "../components/ui/Title";
 import Colors from "../constants/colors";
 import { useState, useEffect } from "react";
@@ -60,20 +59,14 @@ function GameScreen({ userNumber, onGameOver }) {
       <Title>Opponent's Guess</Title>
       <NumberBox>{currentGuess}</NumberBox>
       <Card>
-        <InstructionText style={styles.instructionText}>
-          Higher or Lower?
-        </InstructionText>
-        <View style={styles.buttonsContainer}>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              <Ionicons name="remove" size={24} color="white" />
-            </PrimaryButton>
-          </View>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              <Ionicons name="add" size={24} color="white" />
-            </PrimaryButton>
-          </View>
+        <InstructionText>Higher or Lower?</InstructionText>
+        <View>
+          <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+            -
+          </PrimaryButton>
+          <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+            +
+          </PrimaryButton>
         </View>
       </Card>
       <Card>
@@ -90,13 +83,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
   },
-  instructionText: {
-    marginBottom: 12,
-  },
-  buttonsContainer: {
-    flexDirection: "row",
-  },
-  buttonContainer: {
-    flex: 1,
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: Colors.accent500,
+    textAlign: "center",
+    borderWidth: 2,
+    borderColor: Colors.accent500,
+    padding: 12,
   },
 });
