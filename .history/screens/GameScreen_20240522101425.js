@@ -30,7 +30,7 @@ function GameScreen({ userNumber, onGameOver }) {
 
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameOver(guessRounds.length);
+      onGameOver();
     }
   }, [onGameOver, currentGuess, userNumber]);
 
@@ -86,19 +86,20 @@ function GameScreen({ userNumber, onGameOver }) {
           </View>
         </View>
       </Card>
-      <View style={styles.listContainer}>
-        <FlatList
-          data={guessRounds}
-          renderItem={(itemData) => (
-            <GuessLogItem
-              roundNumber={guessRoundsListLength - itemData.index}
-              guess={itemData.item}
-            />
-          )}
-          keyExtractor={(item) => item}
-          style={styles.flatListStyling}
-        />
-      </View>
+      <Card>
+        <View >
+          <FlatList
+            data={guessRounds}
+            renderItem={(itemData) => (
+              <GuessLogItem
+                roundNumber={guessRoundsListLength - itemData.index}
+                guess={itemData.item}
+              />
+            )}
+            keyExtractor={(item) => item}
+          />
+        </View>
+      </Card>
     </View>
   );
 }
@@ -117,13 +118,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   buttonContainer: {
-    flex: 1,
-  },
-  listContainer: {
-    flex: 1,
-    padding: 16,
-  },
-  flatListStyling: {
     flex: 1,
   },
 });

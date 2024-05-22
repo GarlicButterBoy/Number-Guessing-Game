@@ -86,7 +86,7 @@ function GameScreen({ userNumber, onGameOver }) {
           </View>
         </View>
       </Card>
-      <View style={styles.listContainer}>
+      <Card style={styles.listContainer}>
         <FlatList
           data={guessRounds}
           renderItem={(itemData) => (
@@ -98,7 +98,7 @@ function GameScreen({ userNumber, onGameOver }) {
           keyExtractor={(item) => item}
           style={styles.flatListStyling}
         />
-      </View>
+      </Card>
     </View>
   );
 }
