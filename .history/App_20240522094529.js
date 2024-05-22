@@ -49,6 +49,15 @@ export default function App() {
     return null;
   }
 
+  // const [fontsLoaded] = useFonts({
+  //   "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
+  //   "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+  // });
+
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // }
+
   function pickedNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
     setGameIsOver(false);

@@ -27,15 +27,15 @@ function GameScreen({ userNumber, onGameOver }) {
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
   useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, [minBoundary, maxBoundary]);
+
+  useEffect(() => {
     if (currentGuess === userNumber) {
       onGameOver();
     }
   }, [onGameOver, currentGuess, userNumber]);
-
-  useEffect(() => {
-    minBoundary = 1;
-    maxBoundary = 100;
-  }, []);
 
   function nextGuessHandler(direction) {
     if (
