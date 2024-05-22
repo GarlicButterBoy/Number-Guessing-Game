@@ -63,7 +63,7 @@ function GameScreen({ userNumber, onGameOver }) {
     setGuessRounds((prevGuessRounds) => [newRndNumber, ...prevGuessRounds]);
   }
 
-  const guessRoundsListLength = guessRounds.length;
+  const 
 
   return (
     <View style={styles.screen}>
@@ -90,12 +90,7 @@ function GameScreen({ userNumber, onGameOver }) {
         <View>
           <FlatList
             data={guessRounds}
-            renderItem={(itemData) => (
-              <GuessLogItem
-                roundNumber={guessRoundsListLength - itemData.index}
-                guess={itemData.item}
-              />
-            )}
+            renderItem={(itemData) => <GuessLogItem roundNumber={itemData.index} guess={} />}
             keyExtractor={(item) => item}
           />
         </View>

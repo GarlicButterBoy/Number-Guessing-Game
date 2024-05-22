@@ -90,12 +90,7 @@ function GameScreen({ userNumber, onGameOver }) {
         <View>
           <FlatList
             data={guessRounds}
-            renderItem={(itemData) => (
-              <GuessLogItem
-                roundNumber={guessRoundsListLength - itemData.index}
-                guess={itemData.item}
-              />
-            )}
+            renderItem={(itemData) => <GuessLogItem roundNumber={guessRoundsListLength - itemData.index} guess={} />}
             keyExtractor={(item) => item}
           />
         </View>
