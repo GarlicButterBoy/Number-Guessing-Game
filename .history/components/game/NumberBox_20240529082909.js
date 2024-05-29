@@ -13,6 +13,7 @@ function NumberBox({ children }) {
 export default NumberBox;
 
 const deviceWidth = Dimensions.get("window").width;
+const deviceHeight = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   },
   numberText: {
     color: Colors.accent500,
-    fontSize: deviceWidth < 380 ? 28 : 36,
+    fontSize: deviceWidth < 450 ? 18 : 36,
     fontWeight: "bold",
     fontFamily: "open-sans-bold",
   },
